@@ -76,7 +76,7 @@ class MainActivity : ComponentActivity() {
                             Text("stats")
                             Text("history")
                             Text("settings")
-                            Text("MIT copyright by Hamza Nasher-Alneam, code on GitHub. Last edit Dec 26 2023")
+                            Text("GNUv3 copyright by Hamza Nasher-Alneam, code on GitHub. Last edit Dec 26 2023")
                         }
                     }
                 }
