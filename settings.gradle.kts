@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ActivityLog"
+rootProject.name = "Activity Log"
 include(":app")
  
