@@ -53,6 +53,21 @@ import com.example.activitylog.ui.theme.ActivityLogTheme
 import java.time.LocalDateTime
 import java.util.UUID
 
+// to add
+// start new icon for old tasks to repeat
+// hide history in different panel
+// hide settings in different panel
+// add stats chart
+// add average/total time
+// add history details
+// clear save, export/import save
+// collapse options
+// bottom options bar:
+// main (active activity w/ controls, new activity, suggestions)
+// stats
+// history
+// suggestions
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -84,7 +99,7 @@ class MainActivity : ComponentActivity() {
                             Spacer(modifier = Modifier.height(15.dp))
                             SettingsPanel()
                             Spacer(modifier = Modifier.height(15.dp))
-                            Text("GNUv3 copyright by Hamza Nasher-Alneam, code on GitHub. Last edit Dec 26 2023")
+                            Text("GNUv3 copyright by Hamza Nasher-Alneam, code on GitHub. Last edit on Jan 7 2024")
                         }
                     }
                 }
@@ -131,7 +146,7 @@ fun QuickActionPanel() {
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.Center,
             ) {
-                Button(onClick = { /*TODO*/ }, colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.primary)) {
+                Button(onClick = { /*TODO*/ }, colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.error)) {
                     AddIcon(iconType = Icons.Rounded.Close, description = "Cancel", 30.dp)
                 }
                 Button(onClick = { /*TODO*/ }, modifier = Modifier
@@ -145,7 +160,7 @@ fun QuickActionPanel() {
                         // AddIcon(Icons.Rounded.Pause, "Pause", 60.dp)
                     }
                 }
-                Button(onClick = { /*TODO*/ }) {
+                Button(onClick = { /*TODO*/ }, colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.tertiary)) {
                     AddIcon(iconType = Icons.Rounded.Check, description = "Complete", 30.dp)
                 }
             }
@@ -156,7 +171,7 @@ fun QuickActionPanel() {
 @Composable
 fun NewTaskPanel() {
     Surface(
-        color = MaterialTheme.colorScheme.surfaceVariant,
+        color = MaterialTheme.colorScheme.secondaryContainer,
         shape = RoundedCornerShape(20.dp)
     ) {
         Column(
@@ -269,7 +284,7 @@ fun AlertDialogExample(
 @Composable
 fun SuggestionsPanel() {
     Surface(
-        color = MaterialTheme.colorScheme.surfaceVariant,
+        color = MaterialTheme.colorScheme.secondaryContainer,
         shape = RoundedCornerShape(20.dp)
     ) {
         Column(
@@ -296,7 +311,7 @@ fun SuggestionsPanel() {
 @Composable
 fun ActivityDisplay(name: String) {
     Surface(
-        color = MaterialTheme.colorScheme.background,
+        color = MaterialTheme.colorScheme.primary,
         modifier = Modifier
             .padding(vertical = 5.dp)
             .fillMaxWidth()
@@ -313,7 +328,7 @@ fun ActivityDisplay(name: String) {
 @Composable
 fun StatsPanel() {
     Surface(
-        color = MaterialTheme.colorScheme.surfaceVariant,
+        color = MaterialTheme.colorScheme.secondaryContainer,
         shape = RoundedCornerShape(20.dp)
     ) {
         Column(
@@ -337,7 +352,7 @@ fun StatsPanel() {
 @Composable
 fun HistoryPanel() {
     Surface(
-        color = MaterialTheme.colorScheme.surfaceVariant,
+        color = MaterialTheme.colorScheme.secondaryContainer,
         shape = RoundedCornerShape(20.dp)
     ) {
         Column(
@@ -366,7 +381,7 @@ fun HistoryPanel() {
 @Composable
 fun SettingsPanel() {
     Surface(
-        color = MaterialTheme.colorScheme.surfaceVariant,
+        color = MaterialTheme.colorScheme.secondaryContainer,
         shape = RoundedCornerShape(20.dp)
     ) {
         Column(
