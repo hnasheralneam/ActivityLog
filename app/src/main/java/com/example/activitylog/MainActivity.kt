@@ -6,16 +6,12 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.rounded.AddCircle
@@ -49,9 +45,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.activitylog.ui.screens.MainScreen
 import com.example.activitylog.ui.theme.ActivityLogTheme
 import java.time.LocalDateTime
 import java.util.UUID
+
 
 // to add
 // start new icon for old tasks to repeat
@@ -61,48 +59,13 @@ import java.util.UUID
 // add average/total time
 // add history details
 // clear save, export/import save
-// collapse options
-// bottom options bar:
-// main (active activity w/ controls, new activity, suggestions)
-// stats
-// history
-// suggestions
-
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             ActivityLogTheme {
-                Surface(
-                    color = MaterialTheme.colorScheme.background,
-                    modifier = Modifier.fillMaxSize()
-                ) {
-                    Column(
-                        modifier = Modifier.verticalScroll(rememberScrollState()),
-                    ) {
-                        QuickActionPanel()
-                        Column(
-                            modifier = Modifier
-                                .fillMaxSize()
-                                .padding(
-                                    20.dp
-                                )
-                        ) {
-                            NewTaskPanel()
-                            Spacer(modifier = Modifier.height(15.dp))
-                            SuggestionsPanel()
-                            Spacer(modifier = Modifier.height(15.dp))
-                            StatsPanel()
-                            Spacer(modifier = Modifier.height(15.dp))
-                            HistoryPanel()
-                            Spacer(modifier = Modifier.height(15.dp))
-                            SettingsPanel()
-                            Spacer(modifier = Modifier.height(15.dp))
-                            Text("GNUv3 copyright by Hamza Nasher-Alneam, code on GitHub. Last edit on Jan 7 2024")
-                        }
-                    }
-                }
+                MainScreen()
             }
         }
     }
